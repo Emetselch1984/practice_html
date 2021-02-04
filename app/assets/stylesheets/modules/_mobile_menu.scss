@@ -1,0 +1,105 @@
+$cBlack: black;
+$cWhite: white;
+
+.mobile-menu-icon {
+  background-color: unset;
+  border: none;
+  outline: none !important;
+  cursor: pointer;
+
+  & > span {
+    background-color: $cBlack;
+    width: 35px;
+    height: 2px;
+    display: block;
+    margin-bottom: 9px;
+    transition: transform 0.7s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.menu-open {
+  background-color: $cBlack;
+
+  & .mobile-menu-icon {
+    & > span {
+      background-color: $cWhite;
+
+      &:nth-child(1) {
+        transition-delay: 70ms;
+        transform: translateY(11px) rotate(135deg);
+      }
+      &:nth-child(2) {
+        transition-delay: 0s;
+        transform:  translateX(-18px) scaleX(0);
+      }
+      &:nth-child(3) {
+        transition-delay: 140ms;
+        transform: translateY(-11px) rotate(-135deg);
+      }
+    }
+  }
+}
+
+
+html {
+  font-family: 'Teko', sans-serif;
+}
+//ブラウザによってはデフォルトでマージンが設定されている。初期化のため
+//body {
+//  margin: 0;
+//}
+
+#container {
+  position: relative;
+  //100vhで画面幅一杯になる
+  height: 100vh;
+  background-color: teal;
+}
+
+.animate-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0;
+  font-size: 2em;
+
+  &.inview {
+    opacity: 1;
+
+    & .char {
+      display: inline-block;
+
+      @include animation(
+              $name: kf-animate-chars,
+              $duration: 0.5s,
+                //cubic-bezierの値は画面を見ながら変えていく
+              $timing-function: cubic-bezier(0.39, 1.57, 0.58, 1),
+              $fill-mode: both
+      );
+
+      @for $i from 1 through 9 {
+        &:nth-child(#{$i}) {
+          animation-delay: $i * 0.04s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes kf-animate-chars {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
