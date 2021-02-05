@@ -1,0 +1,30 @@
+<div id="global-container">
+  <div id="container">
+    <div id="content">
+      <div class="hero">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="hero__title">Enjoy Rich</div>
+              <%= image_tag "image-1.jpg" %>
+            </div>
+            <div class="swiper-slide">
+              <div class="hero__title">Fantastic</div>
+              <%= image_tag "image-2.jpg" %>
+            </div>
+            <div class="swiper-slide">
+              <div class="hero__title">Experience</div>
+              <%= image_tag "image-3.jpg" %>
+            </div>
+          </div>
+          <div class="hero__footer">
+            <%= image_tag "arrow.svg",class: "hero__downarrow" %>
+            <span class="hero__scrolltext">scroll</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<%= javascript_pack_tag 'modules/hero-slider' %>
