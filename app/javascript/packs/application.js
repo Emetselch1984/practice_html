@@ -11,4 +11,5 @@ require("vendors/gsap")
 require("vendors/scroll-polyfill")
 require('libs/gsap-animation')
 require('libs/scroll')
-require('main')
+
+
