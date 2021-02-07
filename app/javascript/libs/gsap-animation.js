@@ -1,13 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const ta = new TweenTextAnimation('.tween-animate-title');
     ta.animate();
-});
-
-
+})
 class TextAnimation {
     constructor(el) {
         this.DOM = {};
-        this.DOM.el = document.querySelector(el);
+        this.DOM.el = el instanceof HTMLElement ? el : document.querySelector(el);
         this.chars = this.DOM.el.innerHTML.trim().split("");
         this.DOM.el.innerHTML = this._splitText();
     }
