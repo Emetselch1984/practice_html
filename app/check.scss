@@ -104,9 +104,26 @@
     background-color: rgba(0, 0, 0, 0.4);
   }
 }
-
+#villa-1 {
+  background-image: url("villa-1.jpg");
+}
+#villa-2 {
+  background-image: url("villa-2.jpg");
+}
+#villa-3 {
+  background-image: url("villa-3.jpg");
+}
+#villa-4 {
+  background-image: url("villa-4.jpg");
+}
+#villa-5 {
+  background-image: url("villa-5.jpg");
+}
+#villa-6 {
+  background-image: url("villa-6.jpg");
+}
 .bg-img-zoom {
-  background-image: url(images/image-1.jpg);
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
